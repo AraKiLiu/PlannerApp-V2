@@ -1,5 +1,6 @@
 using System.Net.Http.Headers;
 using Blazored.LocalStorage;
+using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using MudBlazor.Services;
@@ -19,5 +20,9 @@ builder.Services.AddScoped(sp => sp.GetService<IHttpClientFactory>().CreateClien
 
 builder.Services.AddMudServices();
 builder.Services.AddBlazoredLocalStorage();
+builder.Services.AddAuthorizationCore();
+builder.Services.AddScoped<AuthenticationStateProvider, JwtAuthenticationStateProvider>();
 
 await builder.Build().RunAsync();
+
+
