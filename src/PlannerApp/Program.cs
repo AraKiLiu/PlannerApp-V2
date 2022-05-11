@@ -12,7 +12,7 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddHttpClient("PlannerApp.Api", client =>
 {
-    client.BaseAddress = new Uri("https://plannerapp-api.azurewebsites.net");
+    client.BaseAddress = new Uri("https://localhost:5001");
 }).AddHttpMessageHandler<AuthorizationMessageHandler>();
 builder.Services.AddTransient<AuthorizationMessageHandler>();
 
