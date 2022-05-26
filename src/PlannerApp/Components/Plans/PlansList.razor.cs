@@ -47,4 +47,20 @@ public partial class PlansList
         _isBusy = false;
         return null;
     }
+
+    #region Toggler
+
+    private bool _isCardsViewEnabled = true;
+
+    private void SetCardsView()
+    {
+        _isCardsViewEnabled = true;
+    }
+
+    private void SetTableView()
+    {
+        _isCardsViewEnabled = false;
+    }
+
+    #endregion
 }
